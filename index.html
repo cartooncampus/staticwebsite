@@ -1,5 +1,105 @@
-<html>
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Static Website Starter</title>
+    <link rel="stylesheet" href="styles.css" />
+  </head>
   <body>
-    text
+    <header class="site-header">
+      <div class="container header-inner">
+        <a class="brand" href="#home">StaticStarter</a>
+        <button class="nav-toggle" aria-expanded="false" aria-controls="primary-navigation">
+          <span class="sr-only">Open navigation</span>
+          <span></span>
+          <span></span>
+          <span></span>
+        </button>
+        <nav id="primary-navigation" class="site-nav">
+          <a href="#home">Home</a>
+          <a href="#features">Features</a>
+          <a href="#about">About</a>
+          <a href="#contact">Contact</a>
+        </nav>
+      </div>
+    </header>
+
+    <main>
+      <section id="home" class="hero">
+        <div class="container hero-content">
+          <p class="eyebrow">Starter static website</p>
+          <h1>Launch your project with a simple, responsive homepage.</h1>
+          <p class="lead">
+            A clean, mobile-first template that includes a hero section, feature cards, and a fast
+            foundation for your next website.
+          </p>
+          <div class="hero-actions">
+            <a class="button primary" href="#features">Get started</a>
+            <a class="button secondary" href="#about">Learn more</a>
+          </div>
+        </div>
+      </section>
+
+      <section id="features" class="section features">
+        <div class="container">
+          <h2>What this starter includes</h2>
+          <div class="feature-grid">
+            <article class="feature-card">
+              <h3>Responsive design</h3>
+              <p>Looks great on phones, tablets, and desktops with a simple responsive layout.</p>
+            </article>
+            <article class="feature-card">
+              <h3>Modern structure</h3>
+              <p>Semantic HTML and clean styles make this easy to adapt for any project.</p>
+            </article>
+            <article class="feature-card">
+              <h3>Easy customization</h3>
+              <p>Swap colors, update copy, or add new sections in seconds.</p>
+            </article>
+          </div>
+        </div>
+      </section>
+
+      <section id="about" class="section about">
+        <div class="container about-grid">
+          <div>
+            <h2>Built for a quick launch</h2>
+            <p>
+              This starter site is designed to help you get a polished static page online fast. Use it
+              for a portfolio, project landing page, or documentation homepage.
+            </p>
+            <p>
+              Customize the styles in <code>styles.css</code> and keep your content in plain HTML for
+              the fastest editing experience.
+            </p>
+          </div>
+          <aside class="about-card">
+            <h3>Project files</h3>
+            <ul>
+              <li><strong>index.html</strong> – main homepage markup</li>
+              <li><strong>styles.css</strong> – layout and theme styles</li>
+              <li><strong>script.js</strong> – mobile navigation toggle</li>
+            </ul>
+          </aside>
+        </div>
+      </section>
+
+      <section id="contact" class="section contact">
+        <div class="container contact-card">
+          <h2>Ready to customize?</h2>
+          <p>Add your project name, update the copy, and change the colors to match your brand.</p>
+          <a class="button primary" href="mailto:hello@example.com">Contact me</a>
+        </div>
+      </section>
+    </main>
+
+    <footer class="site-footer">
+      <div class="container footer-inner">
+        <p>© <span id="current-year"></span> StaticStarter. Built for a fast static web project.</p>
+      </div>
+    </footer>
+
+    <script src="script.js" defer></script>
   </body>
 </html>
