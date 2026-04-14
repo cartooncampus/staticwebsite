@@ -3,13 +3,13 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Static Website Starter</title>
+    <title>Cartoon Campus - Fictional University Merchandise</title>
     <link rel="stylesheet" href="styles.css" />
   </head>
   <body>
     <header class="site-header">
       <div class="container header-inner">
-        <a class="brand" href="#home">StaticStarter</a>
+        <a class="brand" href="#home">Cartoon Campus</a>
         <button class="nav-toggle" aria-expanded="false" aria-controls="primary-navigation">
           <span class="sr-only">Open navigation</span>
           <span></span>
@@ -18,7 +18,15 @@
         </button>
         <nav id="primary-navigation" class="site-nav">
           <a href="#home">Home</a>
-          <a href="#features">Features</a>
+          <div class="dropdown">
+            <a href="#universes">Universes</a>
+            <div class="dropdown-content">
+              <a href="foundation.html">Foundation (Trantor)</a>
+              <a href="lovecraft.html">Lovecraft (Miskatonic)</a>
+              <a href="avatar.html">Avatar (Ba Sing Se)</a>
+              <a href="dune.html">Dune</a>
+            </div>
+          </div>
           <a href="#about">About</a>
           <a href="#contact">Contact</a>
         </nav>
@@ -28,34 +36,45 @@
     <main>
       <section id="home" class="hero">
         <div class="container hero-content">
-          <p class="eyebrow">Starter static website</p>
-          <h1>Launch your project with a simple, responsive homepage.</h1>
+          <p class="eyebrow">Welcome to the Multiverse of Academia</p>
+          <h1>Discover Fictional Universities</h1>
           <p class="lead">
-            A clean, mobile-first template that includes a hero section, feature cards, and a fast
-            foundation for your next website
+            Explore merchandise and lore from iconic universities in sci-fi and fantasy worlds. From the Galactic Empire's Trantor to the haunted halls of Miskatonic, find designs that celebrate these legendary institutions.
           </p>
           <div class="hero-actions">
-            <a class="button primary" href="#features">Get started</a>
-            <a class="button secondary" href="#about">Learn more</a>
+            <a class="button primary" href="#universes">Explore Universes</a>
+            <a class="button secondary" href="#about">Learn More</a>
           </div>
         </div>
       </section>
 
-      <section id="features" class="section features">
+      <section id="universes" class="section universes">
         <div class="container">
-          <h2>What this starter includes</h2>
-          <div class="feature-grid">
-            <article class="feature-card">
-              <h3>Responsive design</h3>
-              <p>Looks great on phones, tablets, and desktops with a simple responsive layout.</p>
+          <h2>Fictional Universes</h2>
+          <div class="universe-grid">
+            <article class="universe-card">
+              <img src="images/foundation.jpg" alt="University of Trantor" />
+              <h3>Foundation (Trantor)</h3>
+              <p>The Galactic Empire's center of learning, home to psychohistory and the Foundation's legacy.</p>
+              <a href="foundation.html" class="button">Visit Trantor</a>
             </article>
-            <article class="feature-card">
-              <h3>Modern structure</h3>
-              <p>Semantic HTML and clean styles make this easy to adapt for any project.</p>
+            <article class="universe-card">
+              <img src="images/lovecraft.jpg" alt="Miskatonic University" />
+              <h3>Lovecraft (Miskatonic)</h3>
+              <p>Arkham's ancient institution, delving into forbidden knowledge and eldritch mysteries.</p>
+              <a href="lovecraft.html" class="button">Enter Miskatonic</a>
             </article>
-            <article class="feature-card">
-              <h3>Easy customization</h3>
-              <p>Swap colors, update copy, or add new sections in seconds.</p>
+            <article class="universe-card">
+              <img src="images/avatar.jpg" alt="University of Ba Sing Se" />
+              <h3>Avatar (Ba Sing Se)</h3>
+              <p>The Earth Kingdom's premier academy, blending tradition, innovation, and elemental wisdom.</p>
+              <a href="avatar.html" class="button">Discover Ba Sing Se</a>
+            </article>
+            <article class="universe-card">
+              <img src="images/dune.jpg" alt="Universities of Dune" />
+              <h3>Dune</h3>
+              <p>Arrakis' scholarly outposts, exploring ecology, politics, and the spice's secrets.</p>
+              <a href="dune.html" class="button">Journey to Dune</a>
             </article>
           </div>
         </div>
@@ -64,22 +83,21 @@
       <section id="about" class="section about">
         <div class="container about-grid">
           <div>
-            <h2>Built for a quick launch</h2>
+            <h2>About Cartoon Campus</h2>
             <p>
-              This starter site is designed to help you get a polished static page online fast. Use it
-              for a portfolio, project landing page, or documentation homepage.
+              Cartoon Campus is your gateway to merchandise inspired by fictional universities from beloved stories. We celebrate the academic spirit of these imagined worlds, offering designs for clothing, accessories, and more.
             </p>
             <p>
-              Customize the styles in <code>styles.css</code> and keep your content in plain HTML for
-              the fastest editing experience.
+              Beyond products, dive deep into the lore of each universe through our detailed explorations of their histories, characters, and cultures.
             </p>
           </div>
           <aside class="about-card">
-            <h3>Project files</h3>
+            <h3>Our Mission</h3>
             <ul>
-              <li><strong>index.html</strong> – main homepage markup</li>
-              <li><strong>styles.css</strong> – layout and theme styles</li>
-              <li><strong>script.js</strong> – mobile navigation toggle</li>
+              <li>Connect fans through shared fandom</li>
+              <li>Provide high-quality, themed merchandise</li>
+              <li>Educate and entertain with rich lore</li>
+              <li>Support creators and artists</li>
             </ul>
           </aside>
         </div>
@@ -87,16 +105,16 @@
 
       <section id="contact" class="section contact">
         <div class="container contact-card">
-          <h2>Ready to customize?</h2>
-          <p>Add your project name, update the copy, and change the colors to match your brand.</p>
-          <a class="button primary" href="mailto:hello@example.com">Contact me</a>
+          <h2>Get in Touch</h2>
+          <p>Have questions about our products or universes? Want to suggest a new fictional school?</p>
+          <a class="button primary" href="mailto:info@cartooncampus.com">Contact Us</a>
         </div>
       </section>
     </main>
 
     <footer class="site-footer">
       <div class="container footer-inner">
-        <p>© <span id="current-year"></span> StaticStarter. Built for a fast static web project.</p>
+        <p>© <span id="current-year"></span> Cartoon Campus. Celebrating fictional academia.</p>
       </div>
     </footer>
 
