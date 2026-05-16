@@ -1,0 +1,372 @@
+<!DOCTYPE html>
+<html lang="en">
+<!-- Cloudflare Web Analytics --><script defer src='https://static.cloudflareinsights.com/beacon.min.js' data-cf-beacon='{"token": "7d62a38ed9634c669359f7510be13e24"}'></script><!-- End Cloudflare Web Analytics -->
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Cartoon Campus</title>
+    <link rel="stylesheet" href="styles.css" />
+    <style>
+      /* ── Layout wrapper ── */
+      .page-with-sidebar {
+        display: flex;
+        align-items: flex-start;
+        gap: 2rem;
+        width: 100%;
+      }
+
+      .main-content {
+        flex: 1 1 0;
+        min-width: 0; /* prevent overflow */
+        padding-left: 2rem;
+      }
+
+      @media (max-width: 900px) {
+        .main-content {
+          padding-left: 0;
+        }
+      }
+
+      /* ── Product Sidebar ── */
+      .product-sidebar {
+        flex: 0 0 260px;
+        width: 260px;
+        position: sticky;
+        top: 5rem; /* clears the fixed header */
+        display: flex;
+        flex-direction: column;
+        gap: 1rem;
+        padding: 1.25rem;
+        background: #1a1a2e;
+        border-radius: 12px;
+        border: 1px solid rgba(255, 255, 255, 0.08);
+        box-shadow: 0 8px 32px rgba(0, 0, 0, 0.4);
+      }
+
+      .product-sidebar__heading {
+        font-size: 0.7rem;
+        font-weight: 700;
+        letter-spacing: 0.15em;
+        text-transform: uppercase;
+        color: #a78bfa;
+        margin: 0 0 0.25rem;
+      }
+
+      .product-card {
+        display: flex;
+        flex-direction: column;
+        background: rgba(255, 255, 255, 0.04);
+        border-radius: 8px;
+        overflow: hidden;
+        border: 1px solid rgba(255, 255, 255, 0.07);
+        transition: transform 0.18s ease, box-shadow 0.18s ease;
+        text-decoration: none;
+        color: inherit;
+      }
+
+      .product-card:hover {
+        transform: translateY(-3px);
+        box-shadow: 0 10px 24px rgba(0, 0, 0, 0.5);
+        border-color: rgba(167, 139, 250, 0.4);
+      }
+
+      .product-card__img {
+        width: 100%;
+        aspect-ratio: 4 / 3;
+        object-fit: cover;
+        background: #0f0f1e;
+        /* Placeholder gradient shown until real image loads */
+        background-image: linear-gradient(135deg, #1e1e3f 0%, #2d2060 100%);
+      }
+
+      .product-card__body {
+        padding: 0.65rem 0.75rem 0.75rem;
+        display: flex;
+        flex-direction: column;
+        gap: 0.3rem;
+      }
+
+      .product-card__universe {
+        font-size: 0.6rem;
+        font-weight: 700;
+        letter-spacing: 0.12em;
+        text-transform: uppercase;
+        color: #a78bfa;
+      }
+
+      .product-card__name {
+        font-size: 0.82rem;
+        font-weight: 600;
+        color: #f0f0f5;
+        line-height: 1.3;
+        margin: 0;
+      }
+
+      .product-card__price {
+        font-size: 0.78rem;
+        color: #c4c4d4;
+        margin-top: 0.1rem;
+      }
+
+      .product-card__cta {
+        display: inline-block;
+        margin-top: 0.4rem;
+        padding: 0.3rem 0.6rem;
+        font-size: 0.68rem;
+        font-weight: 700;
+        letter-spacing: 0.08em;
+        text-transform: uppercase;
+        color: #fff;
+        background: linear-gradient(90deg, #6d28d9, #a855f7);
+        border-radius: 5px;
+        text-decoration: none;
+        align-self: flex-start;
+        transition: opacity 0.15s;
+      }
+
+      .product-card__cta:hover {
+        opacity: 0.85;
+      }
+
+      .sidebar-view-all {
+        display: block;
+        text-align: center;
+        padding: 0.5rem;
+        font-size: 0.72rem;
+        font-weight: 700;
+        letter-spacing: 0.1em;
+        text-transform: uppercase;
+        color: #a78bfa;
+        text-decoration: none;
+        border: 1px solid rgba(167, 139, 250, 0.3);
+        border-radius: 6px;
+        margin-top: 0.25rem;
+        transition: background 0.15s;
+      }
+
+      .sidebar-view-all:hover {
+        background: rgba(167, 139, 250, 0.1);
+      }
+
+      /* ── Responsive: collapse sidebar below md ── */
+      @media (max-width: 900px) {
+        .page-with-sidebar {
+          flex-direction: column;
+        }
+
+        .product-sidebar {
+          position: static;
+          width: 100%;
+          flex-direction: row;
+          flex-wrap: wrap;
+          gap: 0.75rem;
+        }
+
+        .product-sidebar__heading {
+          width: 100%;
+        }
+
+        .product-card {
+          flex: 1 1 160px;
+          max-width: 220px;
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <header class="site-header">
+      <div class="container header-inner">
+        <a class="brand" href="#home">Cartoon Campus</a>
+        <button class="nav-toggle" aria-expanded="false" aria-controls="primary-navigation">
+          <span class="sr-only">Open navigation</span>
+          <span></span>
+          <span></span>
+          <span></span>
+        </button>
+        <nav id="primary-navigation" class="site-nav">
+          <a href="#home">Home</a>
+          <div class="dropdown">
+            <a href="#universes">Destinations</a>
+            <div class="dropdown-content">
+              <a href="foundation.html">City of Trantor - Galactic Empire</a>
+              <a href="lovecraft.html">H.P. Lovecraft New England</a>
+              <a href="avatar.html">Bend the elements with the Avatar</a>
+              <a href="dune.html">The Dunes of Arrakis</a>
+            </div>
+          </div>
+          <a href="#about">About</a>
+          <a href="#contact">Contact</a>
+        </nav>
+      </div>
+    </header>
+
+    <main>
+      <!-- ════════════════════════════════════════════
+           PAGE WRAPPER: main content + product sidebar
+           ════════════════════════════════════════════ -->
+      <div class="container page-with-sidebar">
+
+        <!-- ── Left / centre: all existing sections ── -->
+        <div class="main-content">
+
+          <section id="home" class="hero">
+            <div class="hero-content">
+              <p class="eyebrow">Finding Your Place in the Multiverse of Academia</p>
+              <h1>Infinite Futures, Infinite Campuses</h1>
+              <p class="lead">            
+  <em>Find the university that fits your destiny</em> — whether you're bound for the Core Worlds, the Spirit Realm, or somewhere beyond known reality.
+  <p>For generations, students across the Multiverse have faced the same impossible question: Where do I belong? Should you pursue psychohistory at the legendary University of Trantor or the Streeling University? Explore forbidden archives beneath Miskatonic University? Master bending philosophy in the Earth Kingdom academies? Or study astro-engineering beneath Tatooine's twin suns?</p>
+  <p>Infinite Futures is the premier interdimensional admissions guidance service for young scholars navigating the bewildering landscape of higher education across realities, timelines, and narrative continuities. Our advisors specialize in matching students with institutions that align not only with their academic goals, but also with their species compatibility, magical aptitude, technological literacy, metaphysical resilience, and probability of surviving first year orientation.</p>
+  <p>Whether you are a cybernetically enhanced teen from Neo-Tokyo, a Force-sensitive moisture farmer, an apprentice alchemist from Amestris, or simply a curious student from a quiet universe with no eldritch anomalies yet, our network provides personalized recommendations, application coaching, dimensional transfer guidance, and scholarship matching across thousands of accredited institutions in fiction-space.</p>
+  <p>At Infinite Futures, we believe every student deserves the chance to discover the world — or worlds — where they truly belong. After all, the right university doesn't just shape your career. Sometimes, it determines the fate of an entire galaxy.</p>
+              </p>
+              <div class="hero-actions">
+                <a class="button primary" href="#universes">Explore Universes</a>
+                <a class="button secondary" href="#about">Learn More</a>
+              </div>
+            </div>
+          </section>
+
+          <section id="universes" class="section universes">
+            <h2>Explore the Universes</h2>
+            <div class="universe-grid">
+              <article class="universe-card">
+                <img src="images/foundation.jpg" alt="Asimov's Foundation Universe" />
+                <h3>Foundation (Cities of Trantor and Terminus)</h3>
+                <p>The most prestigious centers of learning in the Galactic Empire, home to psychohistory and the Foundation's legacy.</p>
+                <a href="foundation.html" class="button">Visit Trantor</a>
+              </article>
+              <article class="universe-card">
+                <img src="images/lovecraft.jpg" alt="Miskatonic University" />
+                <h3>H.P. Lovecraft World</h3>
+                <p>Miskatonic University is Arkham's ancient institution, delving into forbidden knowledge and eldritch mysteries.</p>
+                <a href="lovecraft.html" class="button">Enter Miskatonic</a>
+              </article>
+              <article class="universe-card">
+                <img src="images/avatar.jpg" alt="Avatar's world" />
+                <h3>Avatar World</h3>
+                <p>The Earth Kingdom's premier academy, blending tradition, innovation, and elemental wisdom.</p>
+                <a href="avatar.html" class="button">Discover Ba Sing Se</a>
+              </article>
+              <article class="universe-card">
+                <img src="images/dune.jpg" alt="Universe of Dune" />
+                <h3>Study at the Dunes</h3>
+                <p>Arrakis' scholarly outposts, exploring ecology, politics, and the spice's secrets.</p>
+                <a href="dune.html" class="button">Journey to Dune</a>
+              </article>
+            </div>
+          </section>
+
+          <section id="about" class="section about">
+            <div class="about-grid">
+              <div>
+                <h2>About Cartoon Campus</h2>
+                <p>
+                  Cartoon Campus is your gateway to merchandise inspired by fictional universities from beloved stories. We celebrate the academic spirit of these imagined worlds, offering designs for clothing, accessories, and more.
+                </p>
+                <p>
+                  Beyond products, dive deep into the lore of each universe through our detailed explorations of their histories, characters, and cultures.
+                </p>
+              </div>
+              <aside class="about-card">
+                <h3>Our Mission</h3>
+                <ul>
+                  <li>Connect fans through shared fandom</li>
+                  <li>Provide high-quality, themed merchandise</li>
+                  <li>Educate and entertain with rich lore</li>
+                  <li>Support creators and artists</li>
+                </ul>
+              </aside>
+            </div>
+          </section>
+
+          <section id="contact" class="section contact">
+            <div class="contact-card">
+              <h2>Get in Touch</h2>
+              <p>Have questions about our products or universes? Want to suggest a new fictional school?</p>
+              <a class="button primary" href="mailto:info@cartooncampus.com">Contact Us</a>
+            </div>
+          </section>
+
+        </div><!-- /.main-content -->
+
+
+        <!-- ── Right: Product Sidebar ── -->
+        <aside class="product-sidebar" aria-label="Featured products">
+          <p class="product-sidebar__heading">🎓 Featured Merch</p>
+
+          <!-- Product 1 -->
+          <a class="product-card" href="store/product-trantor-hoodie.html">
+            <img
+              class="product-card__img"
+              src="images/products/trantor-hoodie.jpg"
+              alt="University of Trantor Hoodie"
+            />
+            <div class="product-card__body">
+              <span class="product-card__universe">Foundation</span>
+              <p class="product-card__name">University of Trantor Hoodie</p>
+              <p class="product-card__price">$49.99</p>
+              <span class="product-card__cta">Shop Now</span>
+            </div>
+          </a>
+
+          <!-- Product 2 -->
+          <a class="product-card" href="store/product-miskatonic-tee.html">
+            <img
+              class="product-card__img"
+              src="images/products/miskatonic-tee.jpg"
+              alt="Miskatonic University T-Shirt"
+            />
+            <div class="product-card__body">
+              <span class="product-card__universe">Lovecraft</span>
+              <p class="product-card__name">Miskatonic U. Tee</p>
+              <p class="product-card__price">$29.99</p>
+              <span class="product-card__cta">Shop Now</span>
+            </div>
+          </a>
+
+          <!-- Product 3 -->
+          <a class="product-card" href="store/product-avatar-pin.html">
+            <img
+              class="product-card__img"
+              src="images/products/avatar-pin.jpg"
+              alt="Air Nomad Academy Enamel Pin"
+            />
+            <div class="product-card__body">
+              <span class="product-card__universe">Avatar</span>
+              <p class="product-card__name">Air Nomad Academy Pin</p>
+              <p class="product-card__price">$12.99</p>
+              <span class="product-card__cta">Shop Now</span>
+            </div>
+          </a>
+
+          <!-- Product 4 -->
+          <a class="product-card" href="store/product-dune-mug.html">
+            <img
+              class="product-card__img"
+              src="images/products/dune-mug.jpg"
+              alt="Arrakis Institute Coffee Mug"
+            />
+            <div class="product-card__body">
+              <span class="product-card__universe">Dune</span>
+              <p class="product-card__name">Arrakis Institute Mug</p>
+              <p class="product-card__price">$19.99</p>
+              <span class="product-card__cta">Shop Now</span>
+            </div>
+          </a>
+
+          <a class="sidebar-view-all" href="store/index.html">View All Products →</a>
+        </aside>
+
+      </div><!-- /.page-with-sidebar -->
+    </main>
+
+    <footer class="site-footer">
+      <div class="container footer-inner">
+        <p>© <span id="current-year"></span> Cartoon Campus. Celebrating everything academia, everywhere, all at once.</p>
+      </div>
+    </footer>
+
+    <script src="script.js" defer></script>
+  </body>
+</html>
