@@ -3,44 +3,44 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9" xmlns:xhtml="http://www.w3.org/1999/xhtml">
 
   <url>
-       <loc>https://staticwebsite.cartooncampus.workers.dev/</loc>
-       <lastmod>2026-07-23T17:40:49+00:00</lastmod>
+       <loc>https://cartooncampus.ca/</loc>
+       <lastmod>2026-07-30T20:30:35+00:00</lastmod>
        <changefreq>daily</changefreq>
        <priority>1.0000</priority>
   </url>
   <url>
-       <loc>https://staticwebsite.cartooncampus.workers.dev/foundation</loc>
-       <lastmod>2026-07-23T17:40:49+00:00</lastmod>
+       <loc>https://cartooncampus.ca/foundation</loc>
+       <lastmod>2026-07-30T20:30:35+00:00</lastmod>
        <changefreq>daily</changefreq>
        <priority>0.6400</priority>
   </url>
   <url>
-       <loc>https://staticwebsite.cartooncampus.workers.dev/lovecraft</loc>
-       <lastmod>2026-07-23T17:40:49+00:00</lastmod>
+       <loc>https://cartooncampus.ca/lovecraft</loc>
+       <lastmod>2026-07-30T20:30:35+00:00</lastmod>
        <changefreq>daily</changefreq>
        <priority>0.6400</priority>
   </url>
   <url>
-       <loc>https://staticwebsite.cartooncampus.workers.dev/avatar</loc>
-       <lastmod>2026-07-23T17:40:49+00:00</lastmod>
+       <loc>https://cartooncampus.ca/avatar</loc>
+       <lastmod>2026-07-30T20:30:35+00:00</lastmod>
        <changefreq>daily</changefreq>
        <priority>0.6400</priority>
   </url>
   <url>
-       <loc>https://staticwebsite.cartooncampus.workers.dev/dune</loc>
-       <lastmod>2026-07-23T17:40:49+00:00</lastmod>
+       <loc>https://cartooncampus.ca/dune</loc>
+       <lastmod>2026-07-30T20:30:35+00:00</lastmod>
        <changefreq>daily</changefreq>
        <priority>0.6400</priority>
   </url>
   <url>
-       <loc>https://staticwebsite.cartooncampus.workers.dev/streeling</loc>
-       <lastmod>2026-07-23T17:40:49+00:00</lastmod>
+       <loc>https://cartooncampus.ca/streeling</loc>
+       <lastmod>2026-07-30T20:30:35+00:00</lastmod>
        <changefreq>daily</changefreq>
        <priority>0.4096</priority>
   </url>
   <url>
-       <loc>https://staticwebsite.cartooncampus.workers.dev/university_of_trantor</loc>
-       <lastmod>2026-07-23T17:40:49+00:00</lastmod>
+       <loc>https://cartooncampus.ca/university_of_trantor</loc>
+       <lastmod>2026-07-30T20:30:35+00:00</lastmod>
        <changefreq>daily</changefreq>
        <priority>0.4096</priority>
   </url>
