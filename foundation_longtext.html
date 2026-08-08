@@ -1,0 +1,346 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Asimov's Foundation Universe - The City of Trantor</title>
+    <link rel="stylesheet" href="styles.css" />
+    <style>/* ── Sidebar layout ── */
+      .page-wrapper {
+        display: flex;
+        align-items: flex-start;
+        gap: 2rem;
+        width: min(1080px, calc(100% - 2rem));
+        margin: 0 auto;
+      }
+
+      .main-content {
+        flex: 1 1 0;
+        min-width: 0;
+      }
+
+      /* Override .container inside main-content so sections don't double-margin */
+      .main-content .container {
+        width: 100%;
+        margin: 0;
+      }
+
+      /* ── Product Sidebar ── */
+      .product-sidebar {
+        flex: 0 0 240px;
+        width: 240px;
+        position: sticky;
+        top: 5.5rem;
+        display: flex;
+        flex-direction: column;
+        gap: 1rem;
+        padding: 1.25rem;
+        background: var(--surface);
+        border: 1px solid var(--border);
+        border-radius: 1.25rem;
+        box-shadow: 0 18px 50px rgba(0, 0, 0, 0.12);
+        margin-top: 2rem;
+      }
+
+      .product-sidebar__heading {
+        font-size: 0.68rem;
+        font-weight: 700;
+        letter-spacing: 0.15em;
+        text-transform: uppercase;
+        color: var(--primary);
+        margin: 0 0 0.25rem;
+      }
+
+      /* ── Sidebar product cards ── */
+      .sidebar-product-card {
+        display: flex;
+        flex-direction: column;
+        background: var(--surface-strong);
+        border: 1px solid var(--border);
+        border-radius: 0.75rem;
+        overflow: hidden;
+        text-decoration: none;
+        color: inherit;
+        transition: transform 0.18s ease, box-shadow 0.18s ease, border-color 0.18s ease;
+      }
+
+      .sidebar-product-card:hover {
+        transform: translateY(-2px);
+        box-shadow: 0 8px 24px rgba(0, 102, 204, 0.15);
+        border-color: var(--primary);
+      }
+
+      .sidebar-product-card__img {
+        width: 100%;
+        aspect-ratio: 4 / 3;
+        object-fit: cover;
+        background: var(--primary-soft);
+        /* Placeholder gradient until real image loads */
+        background-image: linear-gradient(135deg, var(--primary-soft) 0%, var(--surface-strong) 100%);
+      }
+
+      .sidebar-product-card__body {
+        padding: 0.6rem 0.75rem 0.75rem;
+        display: flex;
+        flex-direction: column;
+        gap: 0.2rem;
+      }
+
+      .sidebar-product-card__universe {
+        font-size: 0.6rem;
+        font-weight: 700;
+        letter-spacing: 0.12em;
+        text-transform: uppercase;
+        color: var(--primary);
+      }
+
+      .sidebar-product-card__name {
+        font-size: 0.8rem;
+        font-weight: 600;
+        color: #1a1a1a;
+        line-height: 1.3;
+        margin: 0;
+      }
+
+      .sidebar-product-card__price {
+        font-size: 0.78rem;
+        color: var(--text-muted);
+      }
+
+      .sidebar-product-card__cta {
+        display: inline-block;
+        margin-top: 0.35rem;
+        padding: 0.28rem 0.65rem;
+        font-size: 0.68rem;
+        font-weight: 700;
+        letter-spacing: 0.06em;
+        text-transform: uppercase;
+        color: white;
+        background: var(--primary);
+        border-radius: 999px;
+        align-self: flex-start;
+        transition: opacity 0.15s;
+      }
+
+      .sidebar-product-card__cta:hover {
+        opacity: 0.85;
+      }
+
+      .sidebar-view-all {
+        display: block;
+        text-align: center;
+        padding: 0.5rem;
+        font-size: 0.72rem;
+        font-weight: 700;
+        letter-spacing: 0.08em;
+        text-transform: uppercase;
+        color: var(--primary);
+        border: 1px solid var(--border);
+        border-radius: 999px;
+        transition: background 0.15s, border-color 0.15s;
+      }
+
+      .sidebar-view-all:hover {
+        background: var(--primary-soft);
+        border-color: var(--primary);
+      }
+
+      /* ── Responsive collapse ── */
+      @media (max-width: 900px) {
+        .page-wrapper {
+          flex-direction: column;
+        }
+
+        .product-sidebar {
+          position: static;
+          width: 100%;
+          flex-direction: row;
+          flex-wrap: wrap;
+          margin-top: 0;
+        }
+
+        .product-sidebar__heading {
+          width: 100%;
+        }
+
+        .sidebar-product-card {
+          flex: 1 1 160px;
+          max-width: 200px;
+        }
+
+        .sidebar-view-all {
+          width: 100%;
+        }
+      }</style>
+  </head>
+  <body>
+    <header class="site-header">
+      <div class="container header-inner">
+        <a class="brand" href="index.html">Cartoon Campus</a>
+        <nav id="primary-navigation" class="site-nav">
+          <a href="index.html">Home</a>
+          <div class="dropdown">
+            <a href="#universes">Universes</a>
+            <div class="dropdown-content">
+              <a href="foundation.html">Asimov's Foundation</a>
+              <a href="lovecraft.html">H.P. Lovecraft World</a>
+              <a href="avatar.html">Avatar - The last airbender</a>
+              <a href="dune.html">Herbert's Dune</a>
+            </div>
+          </div>
+		   <a href="https://store.cartooncampus.ca">Store</a>
+          <a href="index.html#about">About</a>
+          <a href="index.html#contact">Contact</a>
+        </nav>
+      </div>
+    </header>
+
+    <main>
+	<div class="page-wrapper">
+	<div class="main-content">
+      <section class="hero">
+        <div class="container hero-content">
+          <p class="eyebrow">Isaac Asimov's Foundation Trilogy</p>
+          <h1>The City of Trantor</h1>
+          <div class="lead">
+            <p><img src="images/trantor_panoramic.png" alt="panoramic view of Trantor" /></p>
+			<h2>Where the Galaxy Comes Together</h2>
+<p>At the luminous heart of the Galactic Empire lies Trantor: a world unlike any other. Home to over forty billion citizens and crowned by the legendary Imperial Palace, Trantor is more than a capital—it is the living center of civilization itself. Encased beneath vast gleaming domes and stretching across an entire planet-city, Trantor offers visitors a breathtaking encounter with the achievements of twelve thousand years of Imperial history.</p><img src="images/trantor_imperial_palace.png"/>
+<p>Visitors arriving from every corner of the Galaxy will discover a metropolis of incomparable scale and sophistication. From the grand administrative sectors surrounding the Imperial Palace to the endless cultural districts of the upper levels, Trantor thrives day and night with commerce, diplomacy, scholarship, and entertainment. Travelers can stroll through climate-controlled promenades lined with cuisines from millions of worlds, attend performances by artists from the Outer Reach, or experience the awe-inspiring gravity lifts that connect thousands of subterranean levels beneath the metallic surface of the planet. Few destinations can rival the sensation of standing beneath the radiant artificial skies of the Dahl Sector or gazing upon the endless horizon of steel that has made Trantor legendary throughout human space.</p>
+<p><img src="images/trantor_imperial_library.png" />No journey to Trantor is complete without exploring its unrivaled intellectual and historical treasures. The famed Imperial Library District houses archives accumulated across the entire history of the Empire, while nearby universities and research institutes continue to shape the future of science, economics, and psychohistory. Guided tours of the historic grounds associated with Hari Seldon and the Foundation Crisis attract scholars and curious travelers alike, offering rare glimpses into the pivotal events that transformed Galactic history. Museums dedicated to robotics, hyperspatial navigation, and Imperial expansion preserve artifacts from worlds long vanished into legend.</p>
+<p>Despite its colossal scale, Trantor remains remarkably accessible to visitors. An immense transportation network of expressways, gravitic rail lines, and interstellar spaceports allows travelers to move efficiently between sectors and orbital stations. Luxury accommodations range from serene garden-level residences near the surviving Imperial parks to towering skyline hotels overlooking the glittering urban canopy. Whether arriving for diplomacy, commerce, scholarship, or simple wonder, visitors soon understand why generations across the Galaxy have spoken of Trantor with reverence: all roads among the stars ultimately lead here.</p>
+          </div>
+        </div>
+      </section>
+<!-- ── Right: Product Sidebar ── -->
+        <aside class="product-sidebar" aria-label="Featured products">
+          <p class="product-sidebar__heading">🎓 Featured Merch</p>
+
+          <a class="product-card" href="https://www.redbubble.com/i/hoodie/Asimov-s-Foundation-Fans-University-of-Trantor-apparel-by-cslamo/172557260/ng59">
+            <img
+              class="product-card__img"
+              src="images/products/trantor_hoodie.jpg"
+              alt="University of Trantor Hoodie"
+            />
+            <div class="product-card__body">
+              <span class="product-card__universe">Foundation</span>
+              <p class="product-card__name">University of Trantor Hoodie</p>
+              <p class="product-card__price">Check it out!</p>
+              <span class="product-card__cta">Shop Now</span>
+            </div>
+          </a>
+
+          <a class="product-card" href="https://www.redbubble.com/i/t-shirt/Miskatonic-University-graduate-Show-your-knowledge-by-cslamo/172754124/z5wf">
+            <img
+              class="product-card__img"
+              src="images/products/miskatonic_tee.jpg"
+              alt="Miskatonic University T-Shirt"
+            />
+            <div class="product-card__body">
+              <span class="product-card__universe">Lovecraft</span>
+              <p class="product-card__name">Miskatonic U. Tee</p>
+              <p class="product-card__price">Check it out!</p>
+              <span class="product-card__cta">Shop Now</span>
+            </div>
+          </a>
+
+          <a class="product-card" href="https://www.redbubble.com/i/sticker/University-of-Ba-Sing-Se-The-Top-Earth-Bending-Academy-by-cslamo/177517742/7sgk">
+            <img
+              class="product-card__img"
+              src="images/products/basingse_sticker.jpg"
+              alt="U of Ba Sing Se sticker"
+            />
+            <div class="product-card__body">
+              <span class="product-card__universe">Avatar</span>
+              <p class="product-card__name">Ba Sing Se sticker</p>
+              <p class="product-card__price">Check it out!</p>
+              <span class="product-card__cta">Shop Now</span>
+            </div>
+          </a>
+
+           <a class="product-card" href="store/product-dune-mug.html">
+            <img
+              class="product-card__img"
+              src="images/products/dune-mug.jpg"
+              alt="Arrakis Institute Coffee Mug"
+            />
+            <div class="product-card__body">
+              <span class="product-card__universe">Dune</span>
+              <p class="product-card__name">Arrakis Institute Mug</p>
+              <p class="product-card__price">$19.99</p>
+              <span class="product-card__cta">Shop Now</span>
+            </div>
+          </a>
+
+          <a class="sidebar-view-all" href="store/index.html">View All Products →</a>
+        </aside>
+
+      </div><!-- /.page-wrapper -->
+      <section class="section products">
+        <div class="container">
+          <h2>City of Trantor Merchandise</h2>
+          <div class="product-grid">
+            <!-- Example products, repeat for 10 -->
+            <article class="product-card">
+              <img src="images/foundation-tshirt.jpg" alt="Foundation T-Shirt" />
+              <h3>Visit Trantor T-Shirt</h3>
+              <p>Classic design featuring the Academic District skyline.</p>
+              <a href="#" class="button">Buy Now</a>
+            </article>
+            <!-- Add more products -->
+          </div>
+        </div>
+      </section>
+ <section id="universes" class="section universes">
+        <div class="container">
+          <h2>Where to study</h2>
+          <div class="universe-grid">
+            <article class="universe-card">
+              <img src="images/streeling.jpg" alt="Streeling University" />
+              <h3>Streeling University</h3>
+              <p>Hari Seldon's home institution and the craddle to psychohistory.</p>
+              <a href="streeling.html" class="button">Go to Streeling University</a>
+            </article>
+            <article class="universe-card">
+              <img src="images/university_of_trantor.jpg" alt="University of Trantor" />
+              <h3>University of Trantor</h3>
+              <p>The largest and most influential academic institution in the Galaxy.</p>
+              <a href="university_of_trantor.html" class="button">Enter University of Trantor</a>
+            </article>
+            <article class="universe-card">
+              <img src="images/imperial_library.jpg" alt="The Imperial Library of Trantor" />
+              <h3>The Imperial Library of Trantor</h3>
+              <p>Home of the Galactic Encyclopaedia - The largest and longest living bosy of knowledge known to humanity.</p>
+              <a href="imperial_library.html" class="button">Discover the Imperial Libray</a>
+            </article>
+            <article class="universe-card">
+              <img src="images/foundation_college.jpg" alt="Foundation College at Terminus" />
+              <h3>Foundation College at Terminus</h3>
+              <p>The place where the Foundation's founding fathers started it all.</p>
+              <a href="dune.html" class="button">Journey to Terminus</a>
+            </article>
+          </div>
+        </div>
+      </section>
+      <section class="section lore">
+        <div class="container">
+          <h2>The Lore</h2>
+          <p>Explore the rich history and stories of Trantor and the Foundation.</p>
+          <ul>
+            <li><a href="foundation-history.html">History of Trantor</a></li>
+            <li><a href="foundation-characters.html">Key Characters</a></li>
+            <li><a href="foundation-psychohistory.html">Psychohistory Explained</a></li>
+          </ul>
+        </div>
+      </section>
+    </main>
+
+    <footer class="site-footer">
+      <div class="container footer-inner">
+        <p>© <span id="current-year"></span> Cartoon Campus. Celebrating fictional academia.</p>
+      </div>
+    </footer>
+
+    <script src="script.js"></script>
+  </body>
+</html>
